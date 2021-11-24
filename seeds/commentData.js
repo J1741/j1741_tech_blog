@@ -4,7 +4,6 @@ const commentdata = [
   {},
   {},
   {},
-  {}
 ];
 
 const seedComments = () => Comment.bulkCreate(commentdata);
