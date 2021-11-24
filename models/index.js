@@ -2,10 +2,26 @@ const User = require('./User');
 const Post = require('./Post');
 const Comment = require('./Comment');
 
-// TO-DO: specify table relationships
-// user can have MANY posts
-// post can have ONLY ONE user
-// post can have MANY comments
-// comment can have only ONE user
+// User can have MANY Posts
+User.hasMany(Post, {
+  foreignKey: 'user_id',
+  onDelete: 'CASCADE'
+});
 
-module.exports = { User, Post, Comment };
+// Post can have ONLY ONE user
+Post.belongsTo(User, {
+  foreignKey: 'user_id'
+});
+
+// Post can have MANY Comments
+Post.hasMany(Comment, {
+  foreignKey: 'post_id',
+  onDelete: 'CASCADE'
+});
+
+// Comment can have only ONE Post
+Comment.belongsTo(Post, {
+  foreignKey: 'post_id'
+})
+
+module.exports = { User, Post, Comment }
