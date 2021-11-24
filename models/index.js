@@ -13,15 +13,21 @@ Post.belongsTo(User, {
   foreignKey: 'user_id'
 });
 
-// Post can have MANY Comments
+// Post can have MANY comments
+// ** refactored so comment belongs to user **
 Post.hasMany(Comment, {
-  foreignKey: 'post_id',
+  foreignKey: 'post_id'
+});
+
+// User can have MANY Comments
+User.hasMany(Comment, {
+  foreignKey: 'user_id',
   onDelete: 'CASCADE'
 });
 
-// Comment can have only ONE Post
-Comment.belongsTo(Post, {
-  foreignKey: 'post_id'
-})
+// Comment can have ONLY ONE user
+Comment.belongsTo(User, {
+  foreignKey: 'user_id'
+});
 
 module.exports = { User, Post, Comment }
