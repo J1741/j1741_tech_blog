@@ -19,14 +19,18 @@ body {
 }
 
 .post-column {
-
   flex-direction: column;
 }
 
 .card-header {
   color: indianred;
+  /* font-size: medium; */
 }
 
 .card-text {
   color: #343a40;
+}
+
+.card-subtitle {
+  font-size: smaller;
 }
