@@ -62,4 +62,30 @@ router.post('/new', async (req, res) => {
   }
 })
 
+// edit an existing post
+// ** TODO: add withAuth **
+router.put('/:id', async (req, res) => {
+  console.log('** PUT /api/posts/:id route hit **');  
+  try {
+    const existingPost = await Post.update({
+      title: req.body.title,
+      content: req.body.content
+    },
+    {
+      where: { id: req.params.id }
+    })
+
+    // handle case where post id doesn't exist
+    if (!existingPost) {
+      res.status(404).json({ message: 'No post found with this id!'});
+      return;
+    } 
+
+    res.status(200).json(existingPost);
+
+  } catch {
+    res.status(500).json(err);
+  }
+});
+
 module.exports = router;
