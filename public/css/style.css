@@ -11,7 +11,7 @@ body {
 }
 
 .card {
-  margin: 2rem;
+  margin: 1.5rem;
   border-style: solid;
   border-color: gray;
   box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
@@ -19,5 +19,14 @@ body {
 }
 
 .post-column {
+
   flex-direction: column;
+}
+
+.card-header {
+  color: indianred;
+}
+
+.card-text {
+  color: #343a40;
 }

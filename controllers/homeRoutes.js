@@ -7,12 +7,7 @@ router.get('/test', (req, res) => {
   res.send("hello there!")
 });
 
-// // homeroute to see all posts
-// router.get('/', (req, res) => {
-//   res.render('all-posts');
-// })
-
-// TESTING: homeroute to see all posts
+// homeroute to see all posts
 router.get('/', async (req, res) => {
   console.log('** GET / homeroute hit **')
   try {
