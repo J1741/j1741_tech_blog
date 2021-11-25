@@ -20,13 +20,10 @@ body {
 
 .post-column {
   flex-direction: column;
-  /* justify-content: center; */
-  /* align-items: center; */
 }
 
 .card-header {
   color: indianred;
-  /* font-size: medium; */
 }
 
 .card-text {
