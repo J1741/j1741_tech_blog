@@ -1,3 +1,15 @@
-{{#each posts as |post| }}
-<p>{{post.title}}</p>
-{{/each}}
+<div class="container">
+  <div class="post-column d-flex">
+  {{#each posts as |post| }}
+  {{!-- Bootstrap card --}}
+    <div class="card" style="max-width: 40rem;">
+      <div class="card-body">
+        <h5 class="card-title">{{post.title}}</h5>
+        <p class="card-text">{{post.content}}</p>
+        <a href="#" class="card-link">Card link</a>
+        <a href="#" class="card-link">Another link</a>
+      </div>
+    </div>
+  {{/each}}
+</div>
+</div>
